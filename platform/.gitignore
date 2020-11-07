@@ -2,7 +2,7 @@
 ### Java template
 # Compiled class file
 *.class
-*.imi
+*.iml
 .mvn
 .idea
 # Log file
