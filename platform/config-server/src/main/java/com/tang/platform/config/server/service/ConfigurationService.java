@@ -5,17 +5,17 @@ import com.tang.platform.config.server.meta.model.Configuration;
 import com.tang.platform.config.server.meta.model.ConfigurationHistory;
 
 public interface ConfigurationService {
-    PageInfo<Configuration> findConfigByGroup(int groupId);
+  PageInfo<Configuration> findConfigByGroup(int pageNum, int pageSize, String orderBy, int groupId);
 
-    PageInfo<ConfigurationHistory> findConfigHistoryByConfigId(int configId);
+  PageInfo<ConfigurationHistory> findConfigHistoryByConfigId(int pageNum, int pageSize, String orderBy, int configId);
 
-    int createConfig(Configuration configuration);
+  void createConfig(Configuration configuration);
 
-    int updateConfig(Configuration configuration);
+  void updateConfig(Configuration configuration);
 
-    int deleteConfig(Configuration configuration);
+  void deleteConfig(int id);
 
-    int recoverConfig(int historyId);
+  void recoverConfig(int historyId);
 
-    Configuration findConfigByApp(int groupId, String appName);
+  Configuration findConfigByApp(int groupId, String name, String appName);
 }

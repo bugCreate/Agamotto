@@ -23,5 +23,6 @@ public interface ConfigurationHistoryDao {
 
     @Insert("insert into configuration_history values (#{configId},#{name},#{appName}," +
             "#{comment},#{groupId},#{version},#{config},#{configType},#{mender})")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void create(ConfigurationHistory history);
 }

@@ -25,12 +25,13 @@ public interface ConfigurationDao {
     List<Configuration> findConfigsByGroup(@Param("groupId") int groupId);
 
     @Insert("insert into configuration values (#{name},#{appName},#{comment},#{groupId},#{version},#{config},#{configType})")
-    void create(Configuration configuration);
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    int create(Configuration configuration);
 
     @Delete("delete from configuration where id= #{id}")
-    void delete(@Param("id") int id);
+    int delete(@Param("id") int id);
 
     @Update("update configuration set name = #{name}, app_name = #{appName}, comment = #{comment} ," +
             "group_id = #{groupId}, version= #{version}, config = #{config}, config_type = #{configType} where id = #{id}")
-    void update(Configuration configuration);
+    int update(Configuration configuration);
 }

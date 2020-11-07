@@ -28,7 +28,7 @@ public class Swagger3Config {
         return new ApiInfoBuilder()
                 .title("tang api")
                 .description("tang api")
-                .contact(new Contact("qhm", "http://notexist.cn", "heming_q@163.com"))
+                .contact(new Contact("qhm", "http://tang.demo.com", "heming_q@163.com"))
                 .version("1.0")
                 .build();
     }

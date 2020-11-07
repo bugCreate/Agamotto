@@ -1,15 +1,16 @@
 package com.tang.platform.config.server.service;
 
+import com.github.pagehelper.PageInfo;
 import com.tang.platform.config.server.meta.model.Group;
 
-import java.util.List;
-
 public interface GroupService {
-    List<Group> findAll();
+  PageInfo<Group> findAll(int pageNum, int pageSize, String orderBy);
 
-    int create(Group group);
+  Group findById(int id);
 
-    int update(Group group);
+  int create(Group group);
 
-    int delete(int groupId);
+  int update(Group group);
+
+  int delete(int groupId);
 }
