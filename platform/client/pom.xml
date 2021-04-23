@@ -8,12 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>common</artifactId>
     <packaging>pom</packaging>
+    <artifactId>client</artifactId>
+
     <modules>
-        <module>web</module>
-        <module>common-utils</module>
+        <module>config-client</module>
     </modules>
 
 </project>
