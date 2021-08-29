@@ -1,13 +1,12 @@
 package com.tang.platform.id.generator.service;
 
-import com.tang.platform.id.generator.service.exception.IdGeneratorException;
 import lombok.Getter;
 
 @Getter
 public class ServiceMeta {
     private IdServiceConfig idServiceConfig;
     private IdMeta idMeta;
-    private static ServiceMeta instance = new ServiceMeta();
+    private static final ServiceMeta instance = new ServiceMeta();
 
     public static ServiceMeta getInstance() {
         return instance;

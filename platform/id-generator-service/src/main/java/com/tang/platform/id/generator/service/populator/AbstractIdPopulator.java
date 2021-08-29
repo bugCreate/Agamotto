@@ -6,8 +6,8 @@ import com.tang.platform.id.generator.service.IdPopulator;
 import com.tang.platform.id.generator.service.IdType;
 
 public abstract class AbstractIdPopulator implements IdPopulator {
-    private IdMeta idMeta;
-    private TimeGenerator timeGenerator;
+    private final IdMeta idMeta;
+    private final TimeGenerator timeGenerator;
     private long seq = 0;
 
     public AbstractIdPopulator(IdMeta idMeta, IdType idType) {

@@ -3,9 +3,9 @@ package com.tang.platform.id.generator.service;
 public enum IdType {
     MAX_PEAK("max-peak"), MIN_GRANULARITY("min-granularity");
 
-    private String name;
+    private final String name;
 
-    private IdType(String name) {
+    IdType(String name) {
         this.name = name;
     }
 
