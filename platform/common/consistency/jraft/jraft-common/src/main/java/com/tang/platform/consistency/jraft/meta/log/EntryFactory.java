@@ -1,6 +1,8 @@
-package com.tang.platform.consistency.jraft.log;
+package com.tang.platform.consistency.jraft.meta.log;
 
 import com.tang.platform.consistency.jraft.meta.log.Entry;
+import com.tang.platform.consistency.jraft.meta.log.GeneralEntry;
+import com.tang.platform.consistency.jraft.meta.log.NoOpEntry;
 
 public class EntryFactory {
     public static Entry create(int kind, int index, int term, byte[] payload) {

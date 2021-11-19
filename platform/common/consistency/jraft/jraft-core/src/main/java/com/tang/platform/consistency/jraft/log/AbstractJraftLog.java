@@ -4,6 +4,8 @@ import com.tang.platform.consistency.jraft.communication.AppendEntries;
 import com.tang.platform.consistency.jraft.log.dao.EntryDao;
 import com.tang.platform.consistency.jraft.meta.log.Entry;
 import com.tang.platform.consistency.jraft.meta.log.EntryMeta;
+import com.tang.platform.consistency.jraft.meta.log.GeneralEntry;
+import com.tang.platform.consistency.jraft.meta.log.NoOpEntry;
 import com.tang.platform.consistency.jraft.meta.node.NodeId;
 import lombok.extern.slf4j.Slf4j;
 

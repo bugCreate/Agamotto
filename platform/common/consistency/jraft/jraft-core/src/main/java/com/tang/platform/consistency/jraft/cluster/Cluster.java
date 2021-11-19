@@ -34,7 +34,8 @@ public class Cluster {
                 clusterConfig.getMaxElectionTimeout(),
                 clusterConfig.getLogReplicationDelay(), clusterConfig.getLogReplicationInterval());
         DirectTaskExecutor directTaskExecutor = new DirectTaskExecutor();
-        MsgDeliver msgDeliver = new DefaultMsgDeliver();
+
+        MsgDeliver msgDeliver = new DefaultMsgDeliver(nodeGroup.fetchMember(selfId).getNodeMeta());
         JraftLog jraftLog = new DefaultJraftLog();
         return init(clusterConfig, defaultScheduler, directTaskExecutor, msgDeliver, jraftLog);
     }

@@ -75,4 +75,11 @@ public class Client {
         CompletableFuture<Msg> future = futureMap.get(msg.getMsgId());
         future.complete(msg);
     }
+
+    public void close() throws Exception {
+
+        for (ChannelFuture clientChannel : clientMap.values()) {
+            clientChannel.channel().close();
+        }
+    }
 }

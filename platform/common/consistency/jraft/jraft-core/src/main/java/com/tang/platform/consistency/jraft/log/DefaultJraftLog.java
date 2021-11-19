@@ -3,6 +3,8 @@ package com.tang.platform.consistency.jraft.log;
 import com.tang.platform.consistency.jraft.communication.AppendEntries;
 import com.tang.platform.consistency.jraft.meta.log.Entry;
 import com.tang.platform.consistency.jraft.meta.log.EntryMeta;
+import com.tang.platform.consistency.jraft.meta.log.GeneralEntry;
+import com.tang.platform.consistency.jraft.meta.log.NoOpEntry;
 import com.tang.platform.consistency.jraft.meta.node.NodeId;
 
 import java.util.List;

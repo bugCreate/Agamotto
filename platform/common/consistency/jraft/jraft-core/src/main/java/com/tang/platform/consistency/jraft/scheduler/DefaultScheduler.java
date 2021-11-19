@@ -14,14 +14,14 @@ public class DefaultScheduler implements Scheduler {
     private final Random electionTiomeoutRandom;
     private final ScheduledExecutorService scheduledExecutorService;
 
-    public DefaultScheduler(int minElectionTimetout, int maxElectionTimeout, int logReplicationDelay, int logReplicationInterval) {
-        if (maxElectionTimeout <= 0 || minElectionTimetout <= 0 || minElectionTimetout > maxElectionTimeout) {
+    public DefaultScheduler(int minElectionTimeout, int maxElectionTimeout, int logReplicationDelay, int logReplicationInterval) {
+        if (maxElectionTimeout <= 0 || minElectionTimeout <= 0 || minElectionTimeout > maxElectionTimeout) {
             throw new IllegalArgumentException("election timeout config  is illegal");
         }
         if (logReplicationInterval <= 0 || logReplicationDelay < 0) {
             throw new IllegalArgumentException("log replication delay < 0 or log replication interval <=0");
         }
-        this.minElectionTimetout = minElectionTimetout;
+        this.minElectionTimetout = minElectionTimeout;
         this.maxElectionTimeout = maxElectionTimeout;
         this.logReplicationDelay = logReplicationDelay;
         this.logReplicationInterval = logReplicationInterval;

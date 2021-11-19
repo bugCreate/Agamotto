@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class Server {
     private final MsgConsumer msgConsumer;
+    private ChannelFuture future;
     public void start(int port) {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -36,7 +37,7 @@ public class Server {
                     }
                 }).option(ChannelOption.SO_BACKLOG, 128)
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
-            ChannelFuture future = sbs.bind(port).sync();
+            future = sbs.bind(port).sync();
             log.info("jraft server listen at {}", port);
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
@@ -55,5 +56,8 @@ public class Server {
             return;
         }
         connection.writeAndFlush(msg);
+    }
+    public void close() throws Exception{
+        future.channel().close();
     }
 }

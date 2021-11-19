@@ -1,6 +1,6 @@
 package com.tang.platform.consistency.jraft.log.dao;
 
-import com.tang.platform.consistency.jraft.log.EntryFactory;
+import com.tang.platform.consistency.jraft.meta.log.EntryFactory;
 import com.tang.platform.consistency.jraft.meta.log.Entry;
 
 import java.io.File;

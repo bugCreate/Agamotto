@@ -1,4 +1,4 @@
-package com.tang.platform.consistency.jraft.log;
+package com.tang.platform.consistency.jraft.meta.log;
 
 import com.tang.platform.consistency.jraft.meta.log.Entry;
 import com.tang.platform.consistency.jraft.meta.log.EntryMeta;
